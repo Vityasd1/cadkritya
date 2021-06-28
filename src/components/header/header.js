@@ -5,9 +5,9 @@ import {useStyles} from "./style";
 import Drawer from "@material-ui/core/Drawer";
 import Typed from 'react-typed'
 import classNames from "classnames";
-import Particles from "react-particles-js";
 import Grid from "@material-ui/core/Grid";
 import {HashLink} from "react-router-hash-link";
+import Particles from "react-tsparticles";
 
 export const Header = () => {
     const classes = useStyles();
@@ -22,24 +22,67 @@ export const Header = () => {
             <div className={classes.headerWrapper}>
                 <Particles
                     className={classes.tsparticlesCanvasEl}
-                    params={{
+                    options={{
+                        fpsLimit: 60,
                         particles: {
+                            // canvas borders bounce factors
+                            bounce: {
+                                horizontal: {
+                                    value: 1.01
+                                },
+                                vertical: {
+                                    value: 1.01
+                                }
+                            },
+                            color: {
+                                value: "#ffffff"
+                            },
+                            links: {
+                                color: "#ffffff",
+                                distance: 150,
+                                enable: true,
+                                opacity: 0.5,
+                                width: 1
+                            },
+                            collisions: {
+                                enable: true,
+                                // collisions bounce factors
+                                bounce: {
+                                    horizontal: {
+                                        value: 1.5
+                                    },
+                                    vertical: {
+                                        value: 1.5
+                                    }
+                                }
+                            },
+                            move: {
+                                direction: "none",
+                                enable: true,
+                                outMode: "bounce",
+                                random: false,
+                                speed: 2,
+                                straight: false
+                            },
                             number: {
-                                value: 20,
                                 density: {
                                     enable: true,
-                                    value_area: 900
-                                }
+                                    area: 800
+                                },
+                                value: 40
+                            },
+                            opacity: {
+                                value: 0.5
+                            },
+                            shape: {
+                                type: "circle"
+                            },
+                            size: {
+                                random: true,
+                                value: 5
                             }
                         },
-                        shape: {
-                            enable: true,
-                            type: "circle",
-                            stroke: {
-                                width: 6,
-                                color: "#f9ab00"
-                            }
-                        }
+                        detectRetina: true
                     }}
                 />
                 <Container>
