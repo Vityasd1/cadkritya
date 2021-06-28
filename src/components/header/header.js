@@ -1,18 +1,15 @@
 import React, {useState} from 'react';
-import {AppBar, Toolbar, IconButton, Typography, Button, Hidden, Container} from "@material-ui/core";
+import {AppBar, Button, Container, Hidden, IconButton, Toolbar, Typography} from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 import {useStyles} from "./style";
 import Drawer from "@material-ui/core/Drawer";
-import blueGrey from "@material-ui/core/colors/blueGrey";
 import Typed from 'react-typed'
 import classNames from "classnames";
 import Particles from "react-particles-js";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import {HashLink} from "react-router-hash-link";
 
-export const Header = (props) => {
-    const accent = blueGrey[800];
+export const Header = () => {
     const classes = useStyles();
     const texts = ["professzinálisan.", "rövid határidővel."]
     const [openDrawer, setOpenDrawer] = useState(false);
